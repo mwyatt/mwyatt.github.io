@@ -2,12 +2,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Martin Wyatt - Software Engineer</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <div>
+        <div>
+            <h1>Martin is a Software Engineer and Designer</h1>
+            <p>Who is passionate about solving problems.</p>
+        </div>
+        <div>
+            <div>
+                <a href="https://www.linkedin.com/in/martin-wyatt/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/mwyatt" target="_blank">Github</a>
+            </div>
+            <img src="./profile.png" alt="">
+        </div>
+        <div>
+            <a href="">Experience</a>
+            <a href="">Skills</a>
+            <a href="">Design</a>
+            <a href="">Education</a>
+        </div>
+    </div>
+    <div>
+        <h2>Fantastic Companies I've Worked With</h2>
+        <div data-render-key="experiences">
+
+        </div>
+    </div>
+    <div>
+        <h2>Skills</h2>
+        <div data-render-key="skills">
+            
+        </div>
+    </div>
+    <div>
+        <h2>Design & Print</h2>
+        <div>
+            Image gallery of printwork
+        </div>
+    </div>
+    <div>
+        <h2>Eductation</h2>
+        <div data-render-key="educations">
+            
+        </div>
+    </div>
+    <div>
+        Created with HTML, CSS, Javascript and love.
+    </div>
     <script>
-        console.log('hello world')
+        console.log('Welcome fellow developer.');
+
+        const database = {
+            experiences: [
+                {
+                    logo: 'gear4music.jpg',
+                    name: 'Gear4music Limited',
+                    job: 'Software Engineer',
+                    yearStart: 2020,
+                    accomplishments: [
+                        'Led on frontend development of critical user interfacing for product interactions',
+                        'Worked with a number of JS frameworks and supported other squads in development of these frameworks',
+                        'Active contribution to internal tooling to improve usability for merchandising team',
+                        'Primary engineer working on Laravel focussed internal people tools',
+                        'Led on the transition from UA to GA4 analytics tooling whilst factoring in a refactor of the code resulting in a performance increase',
+                    ],
+                    skills: [],
+                },
+                {
+                    logo: 'gear4music.jpg',
+                    name: 'Townsend Music Ltd',
+                    job: 'Web Developer',
+                    yearStart: 2018,
+                    yearEnd: 2020,
+                    accomplishments: [
+                        'Bespoke JS help centre, large reduction in volume of calls',
+                        'Responsive mobile first redesign of ecommerce platform',
+                        'Refactored legacy PHP code into Laravel',
+                    ],
+                    skills: [],
+                },
+                {
+                    logo: 'gear4music.jpg',
+                    name: 'ACME Facilities Group',
+                    job: 'Web Developer',
+                    yearStart: 2017,
+                    yearEnd: 2018,
+                    accomplishments: [
+                        'Development of internal tooling (Business Management System) including',
+                        'User management (Accounts, Appraisals)',
+                        'Order management (Work allocation)',
+                        'Development of CRM tooling',
+                        'Reporting on large databases (Aeromark (MySQL) and Microsoft NAV (SQL Server))',
+                        'Use of CPanel and Plesk for server management.',
+                    ],
+                    skills: [],
+                },
+                {
+                    logo: 'gear4music.jpg',
+                    name: 'AV Distribution',
+                    job: 'Web Developer',
+                    yearStart: 2012,
+                    yearEnd: 2017,
+                    accomplishments: [
+                        'Bespoke email campaign design and implementation',
+                        'Introduced product image thumbnailing reducing cost of Photoshop licences and basic editing training.',
+                        'Royal mail, DPD, getaddress API integration into backoffice',
+                        'Use of ZPL to output order invoices onto thermal printers. Configuration of servers to install printers on linux.',
+                        'Braintree Payment gateway integration',
+                        'Responsive, mobile first redesign of e-commerce platform',
+                        'Responsive brochure websites to promote individual products or brands',
+                        'Administration tools: Product listing, bundles, exceptions, stock control',
+                        'Logo design / production of new brands / product packaging design',
+                        'Print design / Magazine ads (What Hi-fi, Home Cinema Choice)',
+                    ],
+                    skills: [],
+                },
+                {
+                    logo: 'gear4music.jpg',
+                    name: 'Brick Technology',
+                    job: 'Front End Designer / Developer',
+                    yearStart: 2010,
+                    yearEnd: 2012,
+                    accomplishments: [
+                        'Wordpress development, Javascript, CSS, HTML, PHP',
+                        'Logo design in Illustrator',
+                        'Email newsletter design and implementation',
+                        'Presenting logo/web designs to clients and discussing needs',
+                        'Business card, promotional flyer design',
+                    ],
+                    skills: [],
+                },
+            ],
+            skills: [
+                {id: 1, name: 'Git'},
+                {id: 2, name: 'HTML'},
+            ],
+            educations: [
+                {
+                    logo: 'gear4music.jpg',
+                    name: 'University',
+                    qualification: '2:1 Web and Multimedia',
+                    yearStart: 2020,
+                    yearEnd: 2021,
+                },
+            ]
+        }
+
+        const areaRenderer = {
+            experiences: () => {
+                let response = ``
+                for (const experience of database.experiences) {
+                    let yearEnd = experience.yearEnd === undefined ? 'Present' : experience.yearEnd
+                    const accomplishments = experience.accomplishments.map((accomplishment) => {
+                        return `<li>${accomplishment}</li>`
+                    }).join(``)
+                    response += `
+                        <div>
+                            <div>
+                                <div>
+                                    <h3>${experience.job}</h3>
+                                    <span>${experience.yearStart}-${yearEnd}</span>
+                                </div>
+                                <div>
+                                    <img src="${experience.logo}" alt="${experience.name}">
+                                </div>
+                            </div>
+                            <div>
+                                <ul>
+                                    ${accomplishments}
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                }
+                return response
+            },
+            skills: () => {
+                let response = ``
+                for (const skill of database.skills) {
+                    response += `
+                        <div>${skill.name}</div>
+                    `
+                }
+                return response
+            },
+            educations: () => {
+                let response = ``
+                for (const education of database.educations) {
+                    response += `
+                        <div>${education.qualification}</div>
+                    `
+                }
+                return response
+            }
+        }
+
+        const renderAreaEls = document.querySelectorAll('[data-render-key]')
+        for (const renderAreaEl of renderAreaEls) {
+            renderAreaEl.innerHTML = areaRenderer[renderAreaEl.getAttribute('data-render-key')]()
+        }
     </script>
 </body>
 </html>
