@@ -3,47 +3,277 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martin Wyatt - Software Engineer</title>
+    <style>
+
+        /* Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap');
+
+        /* Reset */
+        h1, h2, h3,
+        p,
+        body {
+            margin: 0;
+        }
+
+        :root {
+            /* -- 465338 */
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .button-to-top {
+            bottom: -44px;
+            position: fixed;
+            right: 0;
+            width: 44px;
+            height: 44px;
+            z-index: 1;
+        }
+
+        .button-to-top.active {
+            bottom: 0;
+        }
+
+        .hero .intro {
+            padding: 2em 1em 0;
+        }
+
+        .hero {
+            background-color: #EFEFEF;
+            padding-bottom: 1em;
+        }
+
+        .hero .intro h1 {
+            color: #465338;
+            margin: 0;
+        }
+
+        .hero .intro p {
+            font-style: italic;
+            color: #8A957D;
+            font-size: 1.2em;
+            line-height: 1.4;
+            margin-top: 0.4em;
+        }
+
+        .nav {
+            margin-top: 1em;
+            padding: 0 1em;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .nav .item {
+            padding: 0.6em 1em;
+            text-decoration: none;
+            color: #128E71;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .nav .item span {
+            border-bottom: 1px solid #9fa9a7;
+        }
+
+        /* Areas */
+        [id^="jump"] {
+            padding: 3em 1em 1em;
+            border-top: 1px solid #CCCCCC;
+        }
+
+        [id^="jump"] > h2 {
+            color: #465338;
+            margin: 0em 0 .2em;
+        }
+
+        [id^="jump"] .subtext {
+            font-style: italic;
+            color: #8A957D;
+            margin-bottom: 2em;
+        }
+
+        /* Experiences */
+        .experience:before {
+            content: "";
+            width: 3px;
+            background: #D9D9D9;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 9px;
+        }
+
+        .experience {
+            position: relative;
+            padding-left: 2em;
+            padding-right: 1em;
+            padding-bottom: 2em;
+        }
+
+        .experience .info h3 {
+            margin: 0;
+        }
+
+        .experience .info:before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: #D9D9D9;
+            position: absolute;
+            border-radius: 100%;
+            top: 50%;
+            left: 1px;
+        }
+
+        .experience .logo {
+            border: 1px solid #128E71;
+            text-align: center;
+            padding: 1em;
+            border-radius: 0px 10px 10px 10px;
+        }
+
+        .experience .logo img {
+            max-width: 250px;
+        }
+
+        .info h3 {
+            font-weight: 500;
+            color: #465338;
+        }
+
+        .info span {
+            color: #465338;
+            font-weight: 300;
+        }
+
+        .experience .accomplishments {
+            display: none;
+        }
+
+        .experience.open .accomplishments {
+            display: block;
+        }
+
+        .accomplishments ul {
+            padding: 0 0 0 1em;
+        }
+
+        .avatar {
+            background-image: url(./profile.jpg);
+            background-repeat: no-repeat;
+            width: 200px;
+            height: 200px;
+            border-radius: 0 100% 100% 100%;
+            margin: 0 auto;
+            background-position: -126px -7px;
+            background-size: 400px;
+        }
+
+        .socials {
+            text-align: right;
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 0.8em;
+            padding-right: 1em;
+        }
+
+        .socials a {
+            width: 44px;
+        }
+
+        .socials svg {
+            width: 100%;
+            height: 100%;
+            fill: #128E71;
+        }
+
+        .skill {
+            background: #899A96;
+            padding: 0.6em 1em;
+            line-height: 1;
+            border-radius: 18px;
+            color: #FFFFFF;
+        }
+
+        [data-render-key="skills"] {
+            display: flex;
+            gap: 0.7em;
+        }
+
+        .experience .title {
+            margin-bottom: 1em;
+        }
+
+        @media screen and (min-width: 640px) {
+            .hero {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <div>
+    <a href="#top" class="button-to-top">
+        <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m16.843 13.789c.108.141.157.3.157.456 0 .389-.306.755-.749.755h-8.501c-.445 0-.75-.367-.75-.755 0-.157.05-.316.159-.457 1.203-1.554 3.252-4.199 4.258-5.498.142-.184.36-.29.592-.29.23 0 .449.107.591.291 1.002 1.299 3.044 3.945 4.243 5.498z"/></svg>
+    </a>
+    <div id="top" class="hero">
+        <div class="intro">
             <h1>Martin is a Software Engineer and Designer</h1>
-            <p>Who is passionate about solving problems.</p>
+            <p>who is passionate about solving problems.</p>
         </div>
-        <div>
-            <div>
-                <a href="https://www.linkedin.com/in/martin-wyatt/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/mwyatt" target="_blank">Github</a>
+        <div class="profile">
+            <div class="socials">
+                <a href="https://www.linkedin.com/in/martin-wyatt/" target="_blank" title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z"/></svg>
+                </a>
+                <a href="https://github.com/mwyatt" target="_blank" title="Github">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z"/></svg>
+                </a>
             </div>
-            <img src="./profile.png" alt="">
+            <div class="avatar">
+
+            </div>
         </div>
-        <div>
-            <a href="">Experience</a>
-            <a href="">Skills</a>
-            <a href="">Design</a>
-            <a href="">Education</a>
+        <div class="nav">
+            <a href="#jump-experience" class="item">
+                <span>Experience</span>
+            </a>
+            <a href="#jump-skills" class="item">
+                <span>Skills</span>
+            </a>
+            <a href="#jump-design" class="item">
+                <span>Design</span>
+            </a>
+            <a href="#jump-education" class="item">
+                <span>Education</span>
+            </a>
         </div>
     </div>
-    <div>
-        <h2>Fantastic Companies I've Worked With</h2>
+    <div id="jump-experience">
+        <h2>Experience</h2>
+        <p class="subtext">with some some fantastic companies.</p>
         <div data-render-key="experiences">
 
         </div>
     </div>
-    <div>
+    <div id="jump-skills">
         <h2>Skills</h2>
+        <p class="subtext">I've picked up along the way.</p>
         <div data-render-key="skills">
             
         </div>
     </div>
-    <div>
+    <div id="jump-design">
         <h2>Design & Print</h2>
+        <p class="subtext">I'd like to show off.</p>
         <div>
             Image gallery of printwork
         </div>
     </div>
-    <div>
-        <h2>Eductation</h2>
+    <div id="jump-education">
+        <h2>Education</h2>
+        <p class="subtext">Where I gained a foundation of knowledge.</p>
         <div data-render-key="educations">
             
         </div>
@@ -51,9 +281,61 @@
     <div>
         Created with HTML, CSS, Javascript and love.
     </div>
-    <script>
-        console.log('Welcome fellow developer.');
 
+    <!-- Templates -->
+    <script>
+        const templates = {
+            experiences: () => {
+                let response = ``
+                for (const experience of database.experiences) {
+                    let yearEnd = experience.yearEnd === undefined ? 'Present' : experience.yearEnd
+                    const accomplishments = experience.accomplishments.map((accomplishment) => {
+                        return `<li>${accomplishment}</li>`
+                    }).join(``)
+                    response += `
+                        <div class="experience">
+                            <div class="info">
+                                <div class="title">
+                                    <h3>${experience.job}</h3>
+                                    <span>${experience.yearStart}-${yearEnd}</span>
+                                </div>
+                                <div class="logo">
+                                    <img src="${experience.logo}" alt="${experience.name}">
+                                </div>
+                            </div>
+                            <div class="accomplishments">
+                                <ul>
+                                    ${accomplishments}
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                }
+                return response
+            },
+            skills: () => {
+                let response = ``
+                for (const skill of database.skills) {
+                    response += `
+                        <div class="skill">${skill.name}</div>
+                    `
+                }
+                return response
+            },
+            educations: () => {
+                let response = ``
+                for (const education of database.educations) {
+                    response += `
+                        <div>${education.qualification}</div>
+                    `
+                }
+                return response
+            }
+        }
+    </script>
+
+    <!-- Storage -->
+    <script>
         const database = {
             experiences: [
                 {
@@ -71,7 +353,7 @@
                     skills: [],
                 },
                 {
-                    logo: 'gear4music.jpg',
+                    logo: 'townsend.jpg',
                     name: 'Townsend Music Ltd',
                     job: 'Web Developer',
                     yearStart: 2018,
@@ -84,7 +366,7 @@
                     skills: [],
                 },
                 {
-                    logo: 'gear4music.jpg',
+                    logo: 'acme.jpg',
                     name: 'ACME Facilities Group',
                     job: 'Web Developer',
                     yearStart: 2017,
@@ -100,7 +382,7 @@
                     skills: [],
                 },
                 {
-                    logo: 'gear4music.jpg',
+                    logo: 'av.jpg',
                     name: 'AV Distribution',
                     job: 'Web Developer',
                     yearStart: 2012,
@@ -120,7 +402,7 @@
                     skills: [],
                 },
                 {
-                    logo: 'gear4music.jpg',
+                    logo: 'brick.jpg',
                     name: 'Brick Technology',
                     job: 'Front End Designer / Developer',
                     yearStart: 2010,
@@ -149,60 +431,58 @@
                 },
             ]
         }
+    </script>
 
-        const areaRenderer = {
-            experiences: () => {
-                let response = ``
-                for (const experience of database.experiences) {
-                    let yearEnd = experience.yearEnd === undefined ? 'Present' : experience.yearEnd
-                    const accomplishments = experience.accomplishments.map((accomplishment) => {
-                        return `<li>${accomplishment}</li>`
-                    }).join(``)
-                    response += `
-                        <div>
-                            <div>
-                                <div>
-                                    <h3>${experience.job}</h3>
-                                    <span>${experience.yearStart}-${yearEnd}</span>
-                                </div>
-                                <div>
-                                    <img src="${experience.logo}" alt="${experience.name}">
-                                </div>
-                            </div>
-                            <div>
-                                <ul>
-                                    ${accomplishments}
-                                </ul>
-                            </div>
-                        </div>
-                    `
-                }
-                return response
-            },
-            skills: () => {
-                let response = ``
-                for (const skill of database.skills) {
-                    response += `
-                        <div>${skill.name}</div>
-                    `
-                }
-                return response
-            },
-            educations: () => {
-                let response = ``
-                for (const education of database.educations) {
-                    response += `
-                        <div>${education.qualification}</div>
-                    `
-                }
-                return response
-            }
+    <!-- Rendering -->
+    <script>
+        console.log('Welcome fellow developer.');
+
+        const areaEls = document.querySelectorAll('[data-render-key]')
+        for (const areaEl of areaEls) {
+            areaEl.innerHTML = templates[areaEl.getAttribute('data-render-key')]()
         }
 
-        const renderAreaEls = document.querySelectorAll('[data-render-key]')
-        for (const renderAreaEl of renderAreaEls) {
-            renderAreaEl.innerHTML = areaRenderer[renderAreaEl.getAttribute('data-render-key')]()
+        // Experiences accordion
+        const infoEls = document.querySelectorAll('.experience')
+        const openClass = 'open'
+        for (const infoEl of infoEls) {
+            infoEl.addEventListener('click', (event) => {
+                for (const infoEl2 of infoEls) {
+                    if (infoEl2 === infoEl) {
+                        continue;
+                    }
+                    infoEl2.classList.remove(openClass)
+                }
+                infoEl.classList.toggle(openClass)
+                if (infoEl.classList.contains(openClass)) {
+                    window.scrollTo(0, infoEl.offsetTop)
+                }
+            })
         }
+
+        // To Top button
+        const toTopConfig = {
+            scrollTimer: 0,
+            buttonEl: document.querySelector('.button-to-top'),
+            delay: 200,
+            activeClass: 'active',
+        }
+        document.addEventListener('scroll', (event) => {
+            clearTimeout(toTopConfig.scrollTimer);
+            scrollTimer = setTimeout(function(event) {
+                if (window.scrollY > toTopConfig.delay) {
+                    toTopConfig.buttonEl.classList.add(toTopConfig.activeClass);
+                } else {
+                    toTopConfig.buttonEl.classList.remove(toTopConfig.activeClass);
+                }
+            }, toTopConfig.delay);
+
+        })
+
+        // Ideas
+        // 50% Learned about Martin, check out the section, section and section.
+        // Congratulations!
+
     </script>
 </body>
 </html>
