@@ -33,10 +33,6 @@
             bottom: 0;
         }
 
-        .hero .intro {
-            padding: 2em 1em 0;
-        }
-
         .hero {
             background-color: #EFEFEF;
             padding-bottom: 1em;
@@ -57,7 +53,6 @@
 
         .nav {
             margin-top: 1em;
-            padding: 0 1em;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, 1fr);
@@ -69,10 +64,6 @@
             color: #128E71;
             font-size: 1.2em;
             font-weight: 600;
-        }
-
-        .nav .item span {
-            border-bottom: 1px solid #9fa9a7;
         }
 
         /* Areas */
@@ -172,7 +163,6 @@
         .socials {
             text-align: right;
             display: flex;
-            flex-direction: row-reverse;
             gap: 0.8em;
             padding-right: 1em;
         }
@@ -198,17 +188,101 @@
         [data-render-key="skills"] {
             display: flex;
             gap: 0.7em;
+            flex-wrap: wrap;
         }
 
         .experience .title {
             margin-bottom: 1em;
         }
 
+        .max-width {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width: 639px) {
+            .hero .intro {
+                padding: 2em 1em 0;
+            }
+
+            .nav .item span {
+                border-bottom: 1px solid #9fa9a7;
+            }
+
+            .nav {
+                padding: 0 1em;
+            }
+
+            .socials {
+                flex-direction: row-reverse;
+            }
+        }
+
         @media screen and (min-width: 640px) {
+            .hero .persona {
+                display: flex;
+                gap: 1em;
+            }
+
+            .hero .intro h1 {
+                font-size: 2.6em;
+                line-height: 1.3;
+            }
+
             .hero {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(2, 1fr);
+                padding: 5% 5% 0;
+            }
+
+            .nav {
+                display: flex;
+                gap: 2em;
+                margin-top: 2em;
+            }
+
+            .nav .item {
+                flex: 1;
+                text-align: center;
+                color: #FFFFFF;
+                padding: 0.4em 1em;
+                background: #128E71;
+            }
+
+            .socials {
+                margin-bottom: 0.6em;
+            }
+
+            .profile {
+                margin-top: -44px;
+            }
+
+            .hero {
+                padding: 10% 5% 0;
+            }
+
+            .hero .intro p {
+                margin-top: 0.8em;
+            }
+
+            .experience .info {
+                display: flex;
+            }
+
+            .experience .title {
+                flex: 1;
+                align-items: center;
+                display: flex;
+            }
+
+            .experience {
+                padding-left: 18%;
+            }
+
+            .experience:before {
+                left: 48px;
+            }
+
+            .experience .info:before {
+                left: 40px;
             }
         }
     </style>
@@ -218,64 +292,76 @@
         <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m16.843 13.789c.108.141.157.3.157.456 0 .389-.306.755-.749.755h-8.501c-.445 0-.75-.367-.75-.755 0-.157.05-.316.159-.457 1.203-1.554 3.252-4.199 4.258-5.498.142-.184.36-.29.592-.29.23 0 .449.107.591.291 1.002 1.299 3.044 3.945 4.243 5.498z"/></svg>
     </a>
     <div id="top" class="hero">
-        <div class="intro">
-            <h1>Martin is a Software Engineer and Designer</h1>
-            <p>who is passionate about solving problems.</p>
-        </div>
-        <div class="profile">
-            <div class="socials">
-                <a href="https://www.linkedin.com/in/martin-wyatt/" target="_blank" title="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z"/></svg>
+        <div class="max-width">
+            <div class="persona">
+                <div class="intro">
+                    <h1>Martin is a Software Engineer and Designer</h1>
+                    <p>who is passionate about solving problems.</p>
+                </div>
+                <div class="profile">
+                    <div class="socials">
+                        <a href="https://www.linkedin.com/in/martin-wyatt/" target="_blank" title="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z"/></svg>
+                        </a>
+                        <a href="https://github.com/mwyatt" target="_blank" title="Github">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z"/></svg>
+                        </a>
+                    </div>
+                    <div class="avatar">
+        
+                    </div>
+                </div>
+            </div>
+            <div class="nav">
+                <a href="#jump-experience" class="item">
+                    <span>Experience</span>
                 </a>
-                <a href="https://github.com/mwyatt" target="_blank" title="Github">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z"/></svg>
+                <a href="#jump-skills" class="item">
+                    <span>Skills</span>
+                </a>
+                <a href="#jump-design" class="item">
+                    <span>Design</span>
+                </a>
+                <a href="#jump-education" class="item">
+                    <span>Education</span>
                 </a>
             </div>
-            <div class="avatar">
-
-            </div>
-        </div>
-        <div class="nav">
-            <a href="#jump-experience" class="item">
-                <span>Experience</span>
-            </a>
-            <a href="#jump-skills" class="item">
-                <span>Skills</span>
-            </a>
-            <a href="#jump-design" class="item">
-                <span>Design</span>
-            </a>
-            <a href="#jump-education" class="item">
-                <span>Education</span>
-            </a>
         </div>
     </div>
     <div id="jump-experience">
-        <h2>Experience</h2>
-        <p class="subtext">with some some fantastic companies.</p>
-        <div data-render-key="experiences">
+        <div class="max-width">
+            <h2>Experience</h2>
+            <p class="subtext">with some some fantastic companies.</p>
+            <div data-render-key="experiences">
 
+            </div>
         </div>
     </div>
     <div id="jump-skills">
-        <h2>Skills</h2>
-        <p class="subtext">I've picked up along the way.</p>
-        <div data-render-key="skills">
-            
+        <div class="max-width">
+            <h2>Skills</h2>
+            <p class="subtext">I've picked up along the way.</p>
+            <div data-render-key="skills">
+                
+            </div>
         </div>
     </div>
     <div id="jump-design">
-        <h2>Design & Print</h2>
-        <p class="subtext">I'd like to show off.</p>
-        <div>
-            Image gallery of printwork
+        <div class="max-width">
+            <h2>Design & Print</h2>
+            <p class="subtext">I'd like to show off.</p>
+            <div>
+                Image gallery of printwork
+            </div>
         </div>
     </div>
     <div id="jump-education">
-        <h2>Education</h2>
-        <p class="subtext">Where I gained a foundation of knowledge.</p>
-        <div data-render-key="educations">
-            
+        <div class="max-width">
+            <h2>Education</h2>
+            <p class="subtext">Where I gained a foundation of knowledge.</p>
+            <div data-render-key="educations">
+                
+            </div>
         </div>
     </div>
     <div>
@@ -419,7 +505,23 @@
             ],
             skills: [
                 {id: 1, name: 'Git'},
-                {id: 2, name: 'HTML'},
+                {id: 3, name: 'PHP'},
+                {id: 4, name: 'HTML5'},
+                {id: 5, name: 'CSS'},
+                {id: 6, name: 'Web Components'},
+                {id: 7, name: 'JavaScript'},
+                {id: 8, name: 'MySQL / Microsoft SQL Server'},
+                {id: 9, name: 'Python'},
+                {id: 10, name: 'ZPL'},
+                {id: 11, name: 'Docker'},
+                {id: 12, name: 'Gulp'},
+                {id: 13, name: 'SASS'},
+                {id: 14, name: 'Web Components'},
+                {id: 15, name: 'Google Analytics'},
+                {id: 16, name: 'React'},
+                {id: 17, name: 'Laravel'},
+                {id: 18, name: 'Wordpress'},
+                {id: 19, name: 'JQuery'},
             ],
             educations: [
                 {
